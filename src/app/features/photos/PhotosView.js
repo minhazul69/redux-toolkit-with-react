@@ -16,7 +16,10 @@ const PhotosView = () => {
       {error && <h4>{error.message}</h4>}
       <section className="photo-section">
         {photos.map((photo) => (
-          <div className="photos-div">{photo.title}</div>
+          <div key={photo.id} className="photos-div">
+            <img className="div-img" src={photo.thumbnailUrl} alt="" />
+            <p>{photo.title}</p>
+          </div>
         ))}
       </section>
     </div>
